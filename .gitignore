@@ -1,0 +1,15 @@
+# Publish the offline app and its data only. Research/download files stay local.
+/*
+!/.gitignore
+!/README.md
+!/build_review_explorer.py
+!/open-review-explorer.cmd
+!/review-explorer/
+/review-explorer/*
+!/review-explorer/README.md
+!/review-explorer/app.js
+!/review-explorer/check-logic.mjs
+!/review-explorer/index.html
+!/review-explorer/reviews.json
+!/review-explorer/styles.css
+!/review-explorer/template.html
