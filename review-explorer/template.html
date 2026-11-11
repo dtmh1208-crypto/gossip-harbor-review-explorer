@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gossip Harbor · Review Explorer</title>
+  <style>/* STYLES */</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="brand-icon" aria-hidden="true">“</span><div><span class="eyebrow">PLAYER VOICES</span><h1>Gossip Harbor <span>/ Review Explorer</span></h1></div></div>
+    <a class="store-link" href="https://apps.apple.com/us/app/gossip-harbor-merge-story/id1623318294" target="_blank" rel="noreferrer">App Store ↗</a>
+  </header>
+  <section class="intro"><div><span class="eyebrow">YOUR RESEARCH LIBRARY</span><h2>Find the voice behind the numbers.</h2><p>6,250 US App Store reviews · Feb 16 – Nov 9, 2026 · Works offline</p></div><div class="intro-actions"><button id="backup-btn" class="button secondary">↓ Export saved evidence</button><button id="export-btn" class="button primary">↓ Export results CSV</button></div></section>
+  <main class="workspace">
+    <aside class="filters" aria-label="Filter reviews">
+      <div class="filter-heading"><h3>Filters</h3><button id="reset-btn" class="text-button">Reset all</button></div>
+      <fieldset><legend>Star rating</legend><div id="stars" class="rating-options"></div></fieldset>
+      <fieldset><legend class="topics-heading">Topics <span>keyword tags</span></legend><label class="select-label" for="category-mode">Match selected topics</label><select id="category-mode"><option value="any">Any selected topic</option><option value="all">All selected topics</option></select><div id="categories" class="topic-options"></div><p class="hint">Counts cover the full library. Tags indicate mentions, including mixed feedback.</p></fieldset>
+      <fieldset><legend>Review date</legend><label class="select-label" for="date-from">From</label><input id="date-from" type="date" min="2026-02-16" max="2026-11-09"><label class="select-label" for="date-to">To</label><input id="date-to" type="date" min="2026-02-16" max="2026-11-09"></fieldset>
+      <fieldset><legend>More filters</legend><label class="select-label" for="version">App version</label><select id="version"><option value="">All versions</option></select><label class="select-label" for="min-words">Minimum review length</label><select id="min-words"><option value="0">Any length</option><option value="10">10+ words</option><option value="25">25+ words</option><option value="50">50+ words</option><option value="100">100+ words</option></select><label class="select-label" for="evidence-filter">Evidence</label><select id="evidence-filter"><option value="all">All reviews</option><option value="saved">Saved only</option><option value="unsaved">Not saved</option></select></fieldset>
+    </aside>
+    <section class="results" aria-label="Review search results">
+      <div class="search-panel"><label for="search" class="sr-only">Search reviews, titles, authors or review IDs</label><div class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder='Search words, a review ID, or "an exact phrase"…' autocomplete="off"><kbd>/</kbd></div><div class="search-options"><label for="search-mode">Search mode</label><select id="search-mode"><option value="all">All search terms</option><option value="any">Any search term</option><option value="phrase">Exact phrase</option></select><span>Searches titles, review text, authors and IDs</span></div></div>
+      <div class="stats-strip"><div><strong id="result-count">6,250</strong><span>matching reviews</span></div><div><strong id="average">3.22 <small>/ 5</small></strong><span>average rating</span></div><div><strong id="negative-share">40.7%</strong><span>1–2 star reviews</span></div><button id="saved-shortcut"><strong id="saved-count">0</strong><span>saved as evidence ↗</span></button></div>
+      <div class="results-toolbar"><div><h3>Review library</h3><span id="range-label"></span></div><div class="sort-options"><label for="sort">Sort</label><select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="lowest">Lowest rating</option><option value="highest">Highest rating</option><option value="longest">Longest review</option><option value="relevance">Most search matches</option></select><label class="sr-only" for="page-size">Reviews per page</label><select id="page-size"><option value="25">25 / page</option><option value="50">50 / page</option><option value="100">100 / page</option></select></div></div>
+      <div id="active-filters" class="active-filters"></div>
+      <div id="review-list" class="review-list"></div>
+      <div id="empty-state" class="empty-state" hidden><span>⌕</span><h3>No reviews match these filters.</h3><p>Try fewer search terms, a different date range, or clear your filters.</p><button id="empty-reset" class="button secondary">Clear filters</button></div>
+      <nav class="pagination" aria-label="Review pages"><button id="prev-btn" class="button secondary">← Previous</button><span id="page-label"></span><button id="next-btn" class="button secondary">Next →</button></nav>
+      <p class="footnote">A sample of US written reviews, not all players or lifetime ratings. Topic tags use English keyword rules and can miss context. No API calls are made by this app.</p>
+    </section>
+  </main>
+  <dialog id="detail-dialog" aria-labelledby="detail-title"><div class="dialog-heading"><span class="eyebrow">REVIEW EVIDENCE</span><button id="close-dialog" class="icon-button" aria-label="Close review">✕</button></div><div id="detail-content"></div><div class="note-area"><label for="evidence-note">Research note</label><textarea id="evidence-note" rows="3" placeholder="Why is this review useful? Add your observation…"></textarea><button id="save-note" class="button secondary">Save note & bookmark</button><p class="hint">Saved in this browser. Export saved evidence to keep a backup.</p></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript>This offline review explorer requires JavaScript to search its embedded review library.</noscript>
+  <script type="application/json" id="review-data">/* DATA */</script>
+  <script>/* APP */</script>
+</body>
+</html>
